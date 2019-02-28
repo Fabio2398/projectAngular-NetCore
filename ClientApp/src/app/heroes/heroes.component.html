@@ -1,0 +1,57 @@
+<h2>My Heroes</h2>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" >
+      <a routerLink="/detail/{{hero.Id}}">
+    <span class="badge">{{hero.Id}}</span> {{hero.Name}}
+    </a>
+    <button class="delete" title="delete hero"
+    (click)="delete(hero)">x</button>
+  </li>
+</ul>
+
+
+
+<div>
+  <label>
+    Hero ID:
+    <input #heroID />
+  </label>
+  <label>
+    Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <!--<button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+  -->
+  <button (click)="add(heroID.value,heroName.value); heroID.value=''; heroName.value=''">
+    ADD
+  </button>
+</div>
+
+<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>   viene passato alla classe hero,l'elemento selectedHero, 
+                                                                in questo modo attraverso il template hero-detail, 
+                                                                avrò la visualizzazione dei dettagli dell'eroe -->
+
+
+
+                                                            
+
+<!--<div *ngIf="selectedHero">
+
+<h2>{{selectedHero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedHero.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedHero.name" placeholder="name">  <!--permette di inserire un nome, e di averlo subito stampato
+  </label>
+  </div>
+
+
+</div>
+-->
+<!--<div><span>id: </span>{{hero.id}}</div>
+<div><span>name: </span>{{hero.name}}</div>
+-->
